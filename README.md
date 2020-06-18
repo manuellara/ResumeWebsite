@@ -1,4 +1,4 @@
-# cyb590
+# manuellara.com resume website
 
 ## Project setup
 ```
