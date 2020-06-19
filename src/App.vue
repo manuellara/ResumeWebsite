@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <Navbar v-if="this.$store.state.user != null"/>
+    <Navbar v-if="userInfo != null"/>
 
     <v-main>
       <router-view />
     </v-main>
 
-    <Footer v-if="this.$store.state.user != null"/>
+    <Footer v-if="userInfo != null"/>
   </v-app>
 </template>
 
@@ -19,9 +19,12 @@ export default {
     Navbar,
     Footer,
   },
-  data: () => ({
-    //
-  }),
+  computed: {
+    // returns logged in user info
+    userInfo() {
+      return this.$store.getters.user;
+    },
+  },
 };
 </script>
 
