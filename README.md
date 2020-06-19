@@ -1,4 +1,4 @@
-# manuellara.com resume site
+# manuellara.com
 
 ## Project setup
 ```
