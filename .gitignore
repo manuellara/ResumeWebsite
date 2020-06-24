@@ -20,5 +20,7 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# Firebase config
+# Firebase config files
 /src/firebaseconfig.js
+firebase.json
+.firebaserc

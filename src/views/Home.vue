@@ -54,10 +54,10 @@ export default {
   },
   data: () => ({
     buttons: [
-      { title: "ABOUT", flag: false, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at." },
-      { title: "EDUCATION", flag: false, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at." },
-      { title: "EXPERIENCE", flag: false, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at." },
-      { title: "CONTACT", flag: false, content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at." },
+      { title: "ABOUT", flag: false, content: "IT professional looking to advance my career in technology. After completing my undergraduate degree in Computer Technology, I completed a Computer Science certificate: reinforcing my background. Recently, I achieved a Master in Cyber Security. With my skills in technical support, troubleshooting, and programming, I feel I have a solid foundation on which I can continue to build on." },
+      { title: "EDUCATION", flag: false, content: "Bachelors in Computer Technology • Certificate in Computer Science • Masters in Cyber Security" },
+      { title: "EXPERIENCE", flag: false, content: "Applications Support Technician & Computer Technician @ Inglewood Unified School District • IT Help Desk @ California State University, Dominguez Hills • Level 6 Associate @ In-N-Out" },
+      { title: "CONTACT", flag: false, content: "manuellaraa@gmail.com • (310) 408-0117" },
     ],
   }),
   methods: {
