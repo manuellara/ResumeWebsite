@@ -45,8 +45,8 @@
           <!-- flex row -->
           <v-flex row pa-2 sm12 md12>
             <!-- cards -->
-            <v-flex pa-2 sm12 md6  v-for="(x, i) in 4" :key="i">
-              <Cards />
+            <v-flex pa-2 sm12 md6  v-for="(item, i) in projectCards" :key="i">
+              <Cards :card="item" />
             </v-flex>
           </v-flex>
         </v-col>
@@ -71,6 +71,48 @@ export default {
       { icon: 'mdi-cellphone-iphone', color: 'black', src: '(310) 408-0117' },
       { icon: 'mdi-gmail', color: 'black', src: 'manuellaraa@gmail.com' },
       { icon: 'mdi-github', color: 'black', src: 'manuellara' },
+    ],
+    projectCards: [
+      { 
+        title: 'Graduate Project',
+        body: 'Demonstrating 2 factor authentication via facial recognition',
+        technologies: [
+          { icon: 'mdi-nodejs', name: 'Node JS' },
+          { icon: 'mdi-vuejs', name: 'Vue JS' },
+          { icon: 'mdi-vuetify', name: 'Vuetify' },
+          { icon: 'mdi-firebase', name: 'Firebase' },
+          { icon: 'mdi-aws', name: 'AWS' },
+          { icon: 'mdi-language-python', name: 'Python' },
+        ],
+      },
+      { 
+        title: 'Resume Webiste',
+        body: 'A website to showcase my development skills as well as my career accomplishments',
+        technologies: [
+          { icon: 'mdi-nodejs', name: 'Node JS' },
+          { icon: 'mdi-vuejs', name: 'Vue JS' },
+          { icon: 'mdi-vuetify', name: 'Vuetify' },
+          { icon: 'mdi-firebase', name: 'Firebase' },
+        ],
+      },
+      { 
+        title: 'AWS Lambda function to blur faces',
+        body: 'This python function uses Rekognition to identify faces and Pillow to blur them.',
+        technologies: [
+          { icon: 'mdi-aws', name: 'AWS' },
+          { icon: 'mdi-language-python', name: 'Python' },
+        ],
+      },
+      { 
+        title: 'CSUDH Masters Projects',
+        body: 'This repo contains 2 projects showcasing ETL and data analysis on a Kaggle dataset and .pcap file.',
+        technologies: [
+          { icon: 'mdi-google', name: 'Google Sheets' },
+          { icon: 'mdi-language-python', name: 'Python' },
+          { icon: 'mdi-database', name: 'SQLite' },
+          { icon: 'mdi-npm', name: 'Other libraries' },
+        ],
+      },
     ],
   }),
   methods: {
