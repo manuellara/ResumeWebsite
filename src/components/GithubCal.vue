@@ -6,7 +6,11 @@ import GitHubCalendar from "github-calendar";
 import "github-calendar/dist/github-calendar-responsive.css";
 export default {
   mounted() {
-    GitHubCalendar(".calendar", "manuellara", { responsive: true });
+    var options = {
+      responsive: true,
+    }
+
+    GitHubCalendar(".calendar", "manuellara", options);
   },
 };
 </script>

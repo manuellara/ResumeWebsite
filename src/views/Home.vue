@@ -107,7 +107,7 @@ export default {
         title: 'CSUDH Masters Projects',
         body: 'This repo contains 2 projects showcasing ETL and data analysis on a Kaggle dataset and .pcap file.',
         technologies: [
-          { icon: 'mdi-google', name: 'Google Sheets' },
+          { icon: 'mdi-google-spreadsheet', name: 'Google Sheets' },
           { icon: 'mdi-language-python', name: 'Python' },
           { icon: 'mdi-database', name: 'SQLite' },
           { icon: 'mdi-npm', name: 'Other libraries' },
