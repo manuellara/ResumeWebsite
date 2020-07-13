@@ -5,15 +5,6 @@
 
       <v-spacer></v-spacer>
 
-      <v-tooltip bottom v-for="(x, i) in buttons" :key="i">
-        <template v-slot:activator="{ on }">
-          <v-btn :color="x.color" icon :href="x.link" :target="x.target" v-on="on">
-            <v-icon>{{ x.icon }}</v-icon>
-          </v-btn>
-        </template>
-        <span>{{ x.tooltip }}</span>
-      </v-tooltip>
-
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn color="black" icon v-on="on">
@@ -47,29 +38,6 @@ export default {
   data: () => ({
     drawer: null,
     date: new Date(),
-    buttons: [
-      {
-        link: "https://facebook.com/manuellaraaa",
-        icon: "mdi-facebook",
-        target: "_blank",
-        tooltip: "Facebook",
-        color: "black"
-      },
-      {
-        link: "https://github.com/manuellara",
-        icon: "mdi-github",
-        target: "_blank",
-        tooltip: "Github",
-        color: "black"
-      },
-      {
-        link: "mailto:manuellaraa@gmail.com?subject=Website Inquiry",
-        icon: "mdi-gmail",
-        target: "_blank",
-        tooltip: "Email",
-        color: "black"
-      },
-    ],
   }),
   methods: {
     googleSignOut() {

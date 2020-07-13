@@ -4,36 +4,32 @@
     <v-row justify="center">
 
       <!-- column 1 as flex -->
-      <v-flex xs12 sm12 md5>
+      <v-flex class="text-center" xs12 sm12 md5>
 
-          <!-- column to center align everything -->
-          <v-col align="center">
-            <!-- profile picture -->
-            <v-flex pa-2 xs12 sm12 md12>
-              <v-avatar class="profile" size="250">
-                <v-img src="@/assets/profile.jpg" />
-              </v-avatar>
-            </v-flex>
+        <!-- profile picture -->
+        <v-flex pa-2 xs12 sm12 md12>
+          <v-avatar class="profile" size="200">
+            <v-img src="@/assets/profile.jpg" />
+          </v-avatar>
+        </v-flex>
 
-            <!-- discription -->
-            <v-flex pa-2 sm12 md12>
-              <h1>Manuel Lara</h1>
-              <h6>IT Professional / Software Developer</h6>
-            </v-flex>
+        <!-- discription -->
+        <v-flex pa-2 sm12 md12>
+          <h1 class="display-1">Manuel Lara</h1>
+          <h6>IT Professional / Software Developer</h6>
+        </v-flex>
 
-            <!-- chips -->
-            <v-flex pa-2 sm12 md12>
-              <v-chip class="ma-2" :color="item.color" outlined    v-for="(item, i) in chips" :key=i>
-                <v-icon left>{{item.icon}}</v-icon>
-                {{item.src}}
-              </v-chip>
-            </v-flex>
-
-            <!-- github calendar -->
-          <v-flex pa-2 sm12 md12>
-            <GithubCal />
-          </v-flex>
-          </v-col>
+        <!-- fab buttons -->
+        <v-flex pa-2 sm12 md12>
+          <v-tooltip bottom v-for="(x, i) in buttons" :key="i">
+            <template v-slot:activator="{ on }">
+              <v-btn class="mx-2" fab outlined :color="x.color" :href="x.link" :target="x.target" v-on="on">
+                <v-icon>{{ x.icon }}</v-icon>
+              </v-btn>
+            </template>
+            <span>{{ x.tooltip }}</span>
+          </v-tooltip>
+        </v-flex>
           
       </v-flex>
 
@@ -42,13 +38,22 @@
       <v-flex xs10 sm12 md7>
         <!-- column to center align everything -->
         <v-col align="center">
+
           <!-- flex row -->
           <v-flex row pa-2 sm12 md12>
+
             <!-- cards -->
             <v-flex pa-2 sm12 md6  v-for="(item, i) in projectCards" :key="i">
               <Cards :card="item" />
             </v-flex>
           </v-flex>
+
+          <!-- github calendar -->
+          <v-flex pa-2 sm12 md12>
+            <GithubCal />
+          </v-flex>
+
+
         </v-col>
       </v-flex>
       
@@ -66,12 +71,6 @@ export default {
     Cards
   },
   data: () => ({
-    chips: [
-      { icon: 'mdi-map-marker-radius', color: 'black', src: 'Los Angeles, CA' },
-      { icon: 'mdi-cellphone-iphone', color: 'black', src: '(310) 408-0117' },
-      { icon: 'mdi-gmail', color: 'black', src: 'manuellaraa@gmail.com' },
-      { icon: 'mdi-github', color: 'black', src: 'manuellara' },
-    ],
     projectCards: [
       { 
         title: 'Graduate Project',
@@ -112,6 +111,29 @@ export default {
           { icon: 'mdi-database', name: 'SQLite' },
           { icon: 'mdi-npm', name: 'Other libraries' },
         ],
+      },
+    ],
+    buttons: [
+      {
+        link: "https://facebook.com/manuellaraaa",
+        icon: "fab fa-facebook-f",
+        target: "_blank",
+        tooltip: "Facebook",
+        color: "black"
+      },
+      {
+        link: "https://github.com/manuellara",
+        icon: "fab fa-github",
+        target: "_blank",
+        tooltip: "Github",
+        color: "black"
+      },
+      {
+        link: "mailto:manuellaraa@gmail.com?subject=Website Inquiry",
+        icon: "mdi-gmail",
+        target: "_blank",
+        tooltip: "Email",
+        color: "black"
       },
     ],
   }),
