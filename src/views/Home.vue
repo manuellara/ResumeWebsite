@@ -23,7 +23,7 @@
 
             <!-- chips -->
             <v-flex pa-2 sm12 md12>
-              <v-chip class="ma-2" :color="item.color" outlined   v-for="(item, i) in chips" :key=i>
+              <v-chip class="ma-2" :color="item.color" outlined    v-for="(item, i) in chips" :key=i>
                 <v-icon left>{{item.icon}}</v-icon>
                 {{item.src}}
               </v-chip>

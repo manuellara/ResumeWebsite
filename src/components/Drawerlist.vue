@@ -1,15 +1,15 @@
 <template>
   <v-list flat>
     <v-list-item-group value="true" color="primary">
-      <v-subheader class="black--text">Projects</v-subheader>
+      <v-subheader class="black--text">Navigation</v-subheader>
 
-      <v-list-item v-for="(x, i) in platformData" :key="i" :href="x.link" :target="x.target">
+      <v-list-item v-for="(x, i) in platformData" :key="i" :href="x.link" :target="x.target" router-link :to="x.route">
         <v-list-item-icon>
           <v-icon color="black" v-text="x.icon" />
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title v-text="x.project" />
+          <v-list-item-title v-text="x.title" />
         </v-list-item-content>
       </v-list-item>
       
@@ -22,14 +22,13 @@ export default {
   data: () => ({
     platformData: [
       {
-        icon: "mdi-github",
-        project: "Graduate Project",
-        link: "https://github.com/manuellara/CSUDHGraduateProject",
-        target: "_blank"
+        icon: "mdi-home",
+        title: "Home",
+        route: "/home"
       },
       {
         icon: "mdi-web",
-        project: "LaraHRR",
+        title: "LaraHRR",
         link: "https://larahrr.com",
         target: "_blank"
       },
