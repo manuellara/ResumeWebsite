@@ -14,7 +14,7 @@ export default {
   },
   mounted() {
     var options = {
-      series: [80, 67, 61, 90],
+      series: [90, 80, 70, 60],
       chart: {
         height: 350,
         type: "radialBar",
@@ -40,8 +40,9 @@ export default {
           },
         },
       },
-      colors: ["#42b883", "#0084ff", "#39539E", "#0077B5"],
-      labels: ["Vue", "Messenger", "Facebook", "LinkedIn"],
+    //   https://coolors.co/e0bad7-61d095-48bf84-439775-2a4747
+      colors: ["#2A4747", "#439775", "#48BF84", "#61D095"], 
+      labels: ["Vue", "Python", "SQL", "REST API"],
       legend: {
         show: true,
         floating: true,
