@@ -59,6 +59,7 @@
                     </div>
                   </v-flex>
 
+                  <!-- sidebar -->
                   <v-flex md4 class="black" py-12>
                     <v-card-text class="white--text">
                       <h1 class="text-center display-1">
@@ -97,6 +98,8 @@
                       </v-btn>
                     </div>
                   </v-flex>
+
+                  <!-- sidebar -->
                   <v-flex md8 py-12>
                     <v-card-text>
                       <h1 class="text-center display-2">
