@@ -1,0 +1,105 @@
+<template>
+  <div id="chart" />
+</template>
+
+<script>
+import ApexCharts from "apexcharts";
+
+export default {
+  data: () => ({
+    //
+  }),
+  methods: {
+    //
+  },
+  mounted() {
+    var options = {
+      series: [80, 67, 61, 90],
+      chart: {
+        height: 350,
+        type: "radialBar",
+      },
+      plotOptions: {
+        radialBar: {
+          offsetY: 0,
+          startAngle: 0,
+          endAngle: 270,
+          hollow: {
+            margin: 5,
+            size: "20%",
+            background: "transparent",
+            image: undefined,
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            value: {
+              show: false,
+            },
+          },
+        },
+      },
+      colors: ["#42b883", "#0084ff", "#39539E", "#0077B5"],
+      labels: ["Vue", "Messenger", "Facebook", "LinkedIn"],
+      legend: {
+        show: true,
+        floating: true,
+        fontSize: "13px",
+        position: "left",
+        offsetX: 200,
+        offsetY: 14,
+        labels: {
+          useSeriesColors: true,
+        },
+        markers: {
+          size: 0,
+        },
+        formatter: function(seriesName, opts) {
+          return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
+        },
+        itemMargin: {
+          vertical: 3,
+        },
+      },
+      responsive: [
+        {
+          breakpoint: 1910,
+          options: {
+            legend: {
+              show: false,
+              fontSize: "10px",
+            },
+            chart: {
+              height: 300,
+            },
+            plotOptions: {
+              radialBar: {
+                endAngle: 360,
+                hollow: {
+                  margin: 5,
+                  size: "40%",
+                },
+                dataLabels: {
+                  name: {
+                    show: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      ],
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+  },
+};
+</script>
+
+<style scoped>
+.chart {
+  width: 100%;
+}
+</style>

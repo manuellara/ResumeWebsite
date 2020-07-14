@@ -4,23 +4,23 @@
     <v-row justify="center">
 
       <!-- column 1 as flex -->
-      <v-flex class="text-center" xs12 sm12 md5>
+      <v-flex xs12 sm12 md5>
 
         <!-- profile picture -->
-        <v-flex pa-2 xs12 sm12 md12>
-          <v-avatar class="profile" size="200">
+        <v-flex class="text-center" pa-2 xs12 sm12 md12>
+          <v-avatar class="profile" size="250">
             <v-img src="@/assets/profile.jpg" />
           </v-avatar>
         </v-flex>
 
         <!-- discription -->
-        <v-flex pa-2 sm12 md12>
+        <v-flex class="text-center" pa-2 xsm12 sm12 md12>
           <h1 class="display-1">Manuel Lara</h1>
           <h6>IT Professional / Software Developer</h6>
         </v-flex>
 
         <!-- fab buttons -->
-        <v-flex pa-2 sm12 md12>
+        <v-flex class="text-center" pa-2 sm12 md12>
           <v-tooltip bottom v-for="(x, i) in buttons" :key="i">
             <template v-slot:activator="{ on }">
               <v-btn class="mx-2" fab outlined :color="x.color" :href="x.link" :target="x.target" v-on="on">
@@ -29,6 +29,11 @@
             </template>
             <span>{{ x.tooltip }}</span>
           </v-tooltip>
+        </v-flex>
+
+        <!-- apexchart -->
+        <v-flex pa-2 xs12 sm12 md12>
+          <Apexchart />
         </v-flex>
           
       </v-flex>
@@ -46,13 +51,13 @@
             <v-flex pa-2 sm12 md6  v-for="(item, i) in projectCards" :key="i">
               <Cards :card="item" />
             </v-flex>
-          </v-flex>
 
-          <!-- github calendar -->
-          <v-flex pa-2 sm12 md12>
-            <GithubCal />
+            <!-- github calendar -->
+            <v-flex pa-2 sm12 md12>
+              <GithubCal />
+            </v-flex>
+            
           </v-flex>
-
 
         </v-col>
       </v-flex>
@@ -64,11 +69,14 @@
 <script>
 import GithubCal from "../components/GithubCal";
 import Cards from "../components/Cards";
+import Apexchart from "../components/Apexchart";
+
 
 export default {
   components: {
     GithubCal,
-    Cards
+    Cards,
+    Apexchart,
   },
   data: () => ({
     projectCards: [
