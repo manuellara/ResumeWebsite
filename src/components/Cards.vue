@@ -1,21 +1,22 @@
 <template>
-    <v-card class="rounded-xl">
+    <v-card class="rounded-lg">
 
-      <v-card-title>{{ card.title }}</v-card-title>
-      <v-card-subtitle class="textAlignLeft">
+      <v-card-title>
+        <v-icon large left>
+          {{ card.icon }}
+        </v-icon>
+        {{ card.title }}
+      </v-card-title>
+
+      <v-card-text class="textAlignLeft headline font-weight-bold">
         {{ card.body }}
-      </v-card-subtitle>
+      </v-card-text>
 
       <v-card-actions>
 
-        <v-tooltip bottom  v-for="(subCard, x) in card.technologies" :key="x">
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on">
-              <v-icon color="black">{{ subCard.icon }}</v-icon>
-            </v-btn>
-          </template>
-          <span>{{ subCard.name }}</span>
-        </v-tooltip>
+        <v-btn text rounded>
+          Read More..
+        </v-btn>
 
       </v-card-actions>
 
@@ -30,7 +31,7 @@ export default {
 }
 </script>
 
-<style type="text/css">
+<style scoped>
 .textAlignLeft {
   text-align:left;
 }

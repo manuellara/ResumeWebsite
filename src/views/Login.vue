@@ -66,7 +66,7 @@
                         Hello, All
                       </h1>
                       <h5 class="text-center">
-                        Welcome to Manuel Lara's resume webiste
+                        Welcome to Manuel Lara's personal webiste
                       </h5>
                     </v-card-text>
                     <div class="text-center">
@@ -154,6 +154,9 @@ export default {
       { label: 'Password', name: 'Password', icon: 'mdi-form-textbox-password', type: 'password', color: 'black' },
     ],
   }),
+  props: {
+    source: String
+  },
   methods: {
     // Google sign-in dispatcher
     googleSignIn() {

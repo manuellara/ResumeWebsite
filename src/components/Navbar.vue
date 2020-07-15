@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-app-bar app color="white" light elevate-on-scroll>
+    <v-app-bar color="white" flat>
       <v-app-bar-nav-icon color="black" @click.stop="drawer = !drawer" />
 
       <v-spacer></v-spacer>

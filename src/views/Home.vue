@@ -48,7 +48,7 @@
           <v-flex row pa-2 sm12 md12>
 
             <!-- cards -->
-            <v-flex pa-2 sm12 md6  v-for="(item, i) in projectCards" :key="i">
+            <v-flex pa-2 sm12 md4  v-for="(item, i) in projectCards" :key="i">
               <Cards :card="item" />
             </v-flex>
 
@@ -81,44 +81,19 @@ export default {
   data: () => ({
     projectCards: [
       { 
-        title: 'Graduate Project',
-        body: 'Demonstrating 2 factor authentication via facial recognition',
-        technologies: [
-          { icon: 'mdi-nodejs', name: 'Node JS' },
-          { icon: 'mdi-vuejs', name: 'Vue JS' },
-          { icon: 'mdi-vuetify', name: 'Vuetify' },
-          { icon: 'mdi-firebase', name: 'Firebase' },
-          { icon: 'mdi-aws', name: 'AWS' },
-          { icon: 'mdi-language-python', name: 'Python' },
-        ],
+        title: 'Education',
+        body: 'This is a test',
+        icon: 'mdi-school'
       },
       { 
-        title: 'Resume Webiste',
-        body: 'A website to showcase my development skills as well as my career accomplishments',
-        technologies: [
-          { icon: 'mdi-nodejs', name: 'Node JS' },
-          { icon: 'mdi-vuejs', name: 'Vue JS' },
-          { icon: 'mdi-vuetify', name: 'Vuetify' },
-          { icon: 'mdi-firebase', name: 'Firebase' },
-        ],
+        title: 'Projects',
+        body: 'This is a test',
+        icon: 'mdi-server'
       },
       { 
-        title: 'AWS Lambda function to blur faces',
-        body: 'This python function uses Rekognition to identify faces and Pillow to blur them.',
-        technologies: [
-          { icon: 'mdi-aws', name: 'AWS' },
-          { icon: 'mdi-language-python', name: 'Python' },
-        ],
-      },
-      { 
-        title: 'CSUDH Masters Projects',
-        body: 'This repo contains 2 projects showcasing ETL and data analysis on a Kaggle dataset and .pcap file.',
-        technologies: [
-          { icon: 'mdi-google-spreadsheet', name: 'Google Sheets' },
-          { icon: 'mdi-language-python', name: 'Python' },
-          { icon: 'mdi-database', name: 'SQLite' },
-          { icon: 'mdi-npm', name: 'Other libraries' },
-        ],
+        title: 'Employment',
+        body: 'This is a test',
+        icon: 'mdi-account-hard-hat'
       },
     ],
     buttons: [
@@ -134,6 +109,13 @@ export default {
         icon: "fab fa-github",
         target: "_blank",
         tooltip: "Github",
+        color: "black"
+      },
+      {
+        link: "https://medium.com/@manuellaraa",
+        icon: "fab fa-medium-m",
+        target: "_blank",
+        tooltip: "Medium",
         color: "black"
       },
       {
