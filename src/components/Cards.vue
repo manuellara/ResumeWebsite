@@ -1,38 +1,38 @@
 <template>
-    <v-card class="rounded-lg">
-
+  <v-card elevation="8" class="rounded-xl" height="40vh">
+    <v-img
+      class="white--text align-end"
+      height="200px"
+      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+      :src="card.image">
+      
       <v-card-title>
-        <v-icon large left>
-          {{ card.icon }}
-        </v-icon>
         {{ card.title }}
       </v-card-title>
+      
+    </v-img>
 
-      <v-card-text class="textAlignLeft headline font-weight-bold">
-        {{ card.body }}
-      </v-card-text>
+    <v-card-text class="textAlignLeft"> 
+      <ul>
+        <li  v-for="(item, i) in card.items" :key="i">
+          {{ item.src }}
+        </li>
+      </ul>
+    </v-card-text>
 
-      <v-card-actions>
-
-        <v-btn text rounded>
-          Read More..
-        </v-btn>
-
-      </v-card-actions>
-
-    </v-card>
+  </v-card>
 </template>
 <script>
 export default {
-  props: ['card'],
+  props: ["card"],
   data: () => ({
     //
   }),
-}
+};
 </script>
 
 <style scoped>
 .textAlignLeft {
-  text-align:left;
+  text-align: left;
 }
 </style>
