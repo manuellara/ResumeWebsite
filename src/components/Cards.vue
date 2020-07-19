@@ -13,11 +13,20 @@
     </v-img>
 
     <v-card-text class="textAlignLeft"> 
-      <ul>
-        <li  v-for="(item, i) in card.items" :key="i">
-          {{ item.src }}
-        </li>
-      </ul>
+
+      <v-list-item two-line>
+        <v-list-item-content>
+          <div class="py-1" v-for="(item, i) in card.items" :key="i">
+            <v-list-item-title>
+              {{ item.location }}
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              {{ item.src }}
+            </v-list-item-subtitle>
+          </div>
+        </v-list-item-content>
+      </v-list-item>
+
     </v-card-text>
 
   </v-card>

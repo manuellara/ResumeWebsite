@@ -87,29 +87,29 @@ export default {
         title: 'Education',
         image: "https://images.collegexpress.com/blog/pros-cons-online-college-education.jpg",
         items: [
-          { src: "Masters in Cyber Security" },
-          { src: "Certificate in Computer Science" },
-          { src: "Bachelors in Computer Technology" },
+          { location: "CSU Dominguez Hills | 2018-20" , src: "Masters in Cyber Security" },
+          { location: "El Camino College | 2017" , src: "Certificate in Computer Science" },
+          { location: "CSU Dominguez Hills | 2009-15" , src: "Bachelors in Computer Technology" },
         ]
       },
       { 
         title: 'Skills',
         image: "https://s30776.pcdn.co/wp-content/uploads/2020/04/AdobeStock_305233591.jpeg",
         items: [
-          { src: "Technical Support" },
-          { src: "Customer Service" },
-          { src: "Troubleshooting/problem solving" },
-          { src: "Web Development" },
-          { src: "Project Managment" },
+          { location: "Technical Support" },
+          { location: "Customer Service" },
+          { location: "Troubleshooting/problem solving" },
+          { location: "Web Development" },
+          { location: "Project Managment" },
         ]
       },
       { 
         title: 'Employment',
         image: "https://cdn-59bd6cf5f911c923e82ee0ee.closte.com/hr/wp-content/uploads/sites/19/2019/05/DSC0173.jpg",
         items: [
-          { src: "Applications Support Technician" },
-          { src: "Computer Technician" },
-          { src: "Associate" },
+          { location: "Inglewood USD | 2019-Present" , src: "Applications Support Technician" },
+          { location: "Inglewood USD | 2018-2019" , src: "Computer Technician" },
+          { location: "In-N-Out | 2010-Present" , src: "Associate" },
         ]
       },
     ],
