@@ -3,7 +3,8 @@ import Api from '@/services/Api'
 
 // exporting an object with a method that calls the endpoint
 export default {
-    rsstojson() {
-        return Api().get('/api/rsstojson')
+    // function to take a JSON object as argument
+    rsstojson(user) {
+        return Api().post('/api/rsstojson', user)
     }
 }

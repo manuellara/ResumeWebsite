@@ -81,6 +81,7 @@ export default {
     Apexchart,
   },
   data: () => ({
+    username: "manuellaraa",
     data: null,
     projectCards: [
       { 
@@ -147,7 +148,9 @@ export default {
   mounted() {
 
     // API call
-    RssToJson.rsstojson().then(result => {
+    RssToJson.rsstojson({
+      username: this.username
+    }).then(result => {
       console.log(result.data)
     });
 
