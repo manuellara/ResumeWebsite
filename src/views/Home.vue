@@ -72,7 +72,7 @@ import GithubCal from "../components/GithubCal";
 import Cards from "../components/Cards";
 import Apexchart from "../components/Apexchart";
 
-
+import RssToJson from '@/services/RssToJson'
 
 export default {
   components: {
@@ -144,6 +144,14 @@ export default {
       },
     ],
   }),
+  mounted() {
+
+    // API call
+    RssToJson.rsstojson().then(result => {
+      console.log(result.data)
+    });
+
+  }
 };
 </script>
 

@@ -14,7 +14,7 @@ export default {
   },
   mounted() {
     var options = {
-      series: [90, 80, 70, 60],
+      series: [90, 80, 70, 60, 50],
       chart: {
         height: 350,
         type: "radialBar",
@@ -41,15 +41,15 @@ export default {
         },
       },
     //   https://coolors.co/e0bad7-61d095-48bf84-439775-2a4747
-      colors: ["#2A4747", "#439775", "#48BF84", "#61D095"], 
-      labels: ["Vue", "Python", "SQL", "REST API"],
+      colors: ["#2A4747", "#439775", "#48BF84", "#61D095", "#e0bad7"], 
+      labels: ["Vue", "Python", "SQL", "REST APIs", "AWS"],
       legend: {
         show: true,
         floating: true,
         fontSize: "13px",
         position: "left",
         offsetX: 200,
-        offsetY: 14,
+        offsetY: 5,
         labels: {
           useSeriesColors: true,
         },
@@ -60,7 +60,7 @@ export default {
           return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
         },
         itemMargin: {
-          vertical: 3,
+          vertical: 2,
         },
       },
       responsive: [
