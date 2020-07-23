@@ -35,6 +35,11 @@
         <v-flex pa-2 xs12 sm12 md12>
           <Apexchart />
         </v-flex>
+
+        <!-- github calendar -->
+        <v-flex pa-2 xs12 sm12 md12>
+          <GithubCal />
+        </v-flex>
           
       </v-flex>
 
@@ -52,9 +57,11 @@
               <Cards :card="item" />
             </v-flex>
 
-            <!-- github calendar -->
-            <v-flex pa-2 xs12 sm12 md12>
-              <GithubCal />
+            <!-- tersttttttt -->
+            <v-flex v-if="response == true">
+              <v-flex pa-4 xs12 sm12 md12 v-for="(x,y) in data.items" :key="y">
+                <Blogpost :article="x" :profilepic="data.image" />
+              </v-flex>
             </v-flex>
             
           </v-flex>
@@ -71,6 +78,7 @@
 import GithubCal from "../components/GithubCal";
 import Cards from "../components/Cards";
 import Apexchart from "../components/Apexchart";
+import Blogpost from "../components/Blogpost";
 
 import RssToJson from '@/services/RssToJson'
 
@@ -79,10 +87,12 @@ export default {
     GithubCal,
     Cards,
     Apexchart,
+    Blogpost,
   },
   data: () => ({
     username: "manuellaraa",
     data: null,
+    response: false,
     projectCards: [
       { 
         title: 'Education',
@@ -152,6 +162,8 @@ export default {
       username: this.username
     }).then(result => {
       console.log(result.data)
+      this.response = true
+      this.data = result.data
     });
 
   }

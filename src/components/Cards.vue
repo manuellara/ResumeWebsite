@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation="8" class="rounded-xl" height="40vh">
+  <v-card elevation="8" class="rounded-xl" height="40vh"> 
     <v-img
       class="white--text align-end"
       height="200px"

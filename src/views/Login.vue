@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height fluid>
+  <v-container fill-height fluid id="app">
     <v-row align="center" justify="center">
       <v-col align="center">
 
@@ -166,4 +166,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#app {
+  background: rgb(0,0,0);
+  background: linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+}
+</style>

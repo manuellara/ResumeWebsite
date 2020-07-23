@@ -42,7 +42,7 @@ export default {
       },
     //   https://coolors.co/e0bad7-61d095-48bf84-439775-2a4747
       colors: ["#2A4747", "#439775", "#48BF84", "#61D095", "#e0bad7"], 
-      labels: ["Vue", "Python", "SQL", "REST APIs", "AWS"],
+      labels: ["Vue", "Python", "SQL", "REST APIs", "AWS/GCP"],
       legend: {
         show: true,
         floating: true,
