@@ -1,10 +1,21 @@
 <template>
   <nav>
-    <v-app-bar color="white" flat>
+    <v-app-bar app color="white" elevate-on-scroll>
       <v-app-bar-nav-icon color="black" @click.stop="drawer = !drawer" />
 
       <v-spacer></v-spacer>
 
+      <!-- fab buttons -->
+      <v-tooltip bottom v-for="(x, i) in buttons" :key="i">
+        <template v-slot:activator="{ on }">
+          <v-btn fab text :href="x.link" :target="x.target" v-on="on">
+            <v-icon :color="x.color">{{ x.icon }}</v-icon>
+          </v-btn>
+        </template>
+        <span>{{ x.tooltip }}</span>
+      </v-tooltip>
+
+      <!-- 3 dots - logout button -->
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn color="black" icon v-on="on">
@@ -38,6 +49,36 @@ export default {
   data: () => ({
     drawer: null,
     date: new Date(),
+    buttons: [
+      {
+        link: "https://facebook.com/manuellaraaa",
+        icon: "fab fa-facebook-f",
+        target: "_blank",
+        tooltip: "Facebook",
+        color: "black"
+      },
+      {
+        link: "https://github.com/manuellara",
+        icon: "fab fa-github",
+        target: "_blank",
+        tooltip: "Github",
+        color: "black"
+      },
+      {
+        link: "https://medium.com/@manuellaraa",
+        icon: "fab fa-medium-m",
+        target: "_blank",
+        tooltip: "Medium",
+        color: "black"
+      },
+      {
+        link: "mailto:manuellaraa@gmail.com?subject=Website Inquiry",
+        icon: "mdi-gmail",
+        target: "_blank",
+        tooltip: "Email",
+        color: "black"
+      },
+    ],
   }),
   methods: {
     googleSignOut() {
