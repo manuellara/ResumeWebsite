@@ -23,9 +23,9 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item @click="googleSignOut">
+          <v-list-item @click="signOut">
             <v-list-item-icon>
-              <v-icon color="black">mdi-google</v-icon>
+              <v-icon color="black">mdi-{{ getProvider }}</v-icon>
             </v-list-item-icon>
             <v-list-item-title>sign-out</v-list-item-title>
           </v-list-item>
@@ -73,15 +73,21 @@ export default {
       },
       {
         link: "mailto:manuellaraa@gmail.com?subject=Website Inquiry",
-        icon: "mdi-gmail",
+        icon: "mdi-email-outline",
         target: "_blank",
         tooltip: "Email",
         color: "black"
       },
     ],
   }),
+  computed: {
+    getProvider(){
+      var provider = this.$store.getters.user.providerData[0].providerId
+      return provider.replace(".com", "")
+    }
+  },
   methods: {
-    googleSignOut() {
+    signOut() {
       this.$store.dispatch("logout");
     },
   },

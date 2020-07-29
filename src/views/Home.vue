@@ -11,20 +11,23 @@
 
 
 
-          <div id="wrapper">
-            <!-- profile picture -->
-            <v-flex pa-4 xs12 sm11 md12>
-              <v-avatar class="profile" size="250">
-                <v-img src="@/assets/profile.jpg" />
-              </v-avatar>
-            </v-flex>
+          <!-- header -->
+          <v-card width="75%" elevation="8" class="pa-4 rounded-xl grey lighten-3">
+            <v-card-text>
+              <!-- profile picture -->
+              <v-flex xs12 sm11 md12>
+                <v-avatar v-for="(x, i) in avatarProperties" :key="i"  :class="x.class" :size="x.size">
+                  <v-img src="@/assets/profile.jpg" />
+                </v-avatar>
+              </v-flex>
 
-            <!-- discription -->
-            <v-flex class="text-center" pa-2 xsm12 sm12 md12>
-              <h1 class="display-1">Manuel Lara</h1>
-              <h6>IT Professional / Software Developer</h6>
-            </v-flex>        
-          </div>
+              <!-- discription -->
+              <v-flex class="text-center black--text" pt-2 xsm12 sm12 md12>
+                <h1 class="display-1">Manuel Lara</h1>
+                <h4>IT Professional / Software Developer</h4>
+              </v-flex>
+            </v-card-text>
+          </v-card>
 
 
 
@@ -32,7 +35,7 @@
           <v-flex row pa-2 xs12 sm12 md12>
 
             <!-- cards -->
-            <v-flex pa-4 xs12 sm12 md4  v-for="(item, i) in projectCards" :key="i">
+            <v-flex pa-4 xs12 sm4 md4  v-for="(item, i) in projectCards" :key="i">
               <Cards :card="item" />
             </v-flex>
 
@@ -97,10 +100,14 @@ export default {
         image: "https://cdn-59bd6cf5f911c923e82ee0ee.closte.com/hr/wp-content/uploads/sites/19/2019/05/DSC0173.jpg",
         items: [
           { location: "Inglewood USD | 2019-Present" , src: "Applications Support Technician" },
-          { location: "Inglewood USD | 2018-2019" , src: "Computer Technician" },
+          { location: "Inglewood USD | 2018-19" , src: "Computer Technician" },
           { location: "In-N-Out | 2010-Present" , src: "Associate" },
         ]
       },
+    ],
+    avatarProperties: [
+      { size: 250, class: "profile hidden-sm-and-down" },
+      { size: 150, class: "profile hidden-md-and-up" },
     ],
   }),
   mounted() {

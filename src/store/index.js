@@ -13,10 +13,7 @@ export default new Vuex.Store({
   getters: {
     user(state) {
       return state.user;
-    },
-    platformData(state) {
-      return state.platformData;
-    },
+    }
   },
   mutations: {
     SET_USER(state, payload) {
@@ -32,8 +29,23 @@ export default new Vuex.Store({
       // re-routes user to the Homepage
       router.replace("/home");
     },
-    signIn({ commit }) {
-      var provider = new firebase.auth.GoogleAuthProvider();
+    signIn({ commit }, provider) {
+      // determine provider
+      switch(provider){
+        case 'google':
+          provider = new firebase.auth.GoogleAuthProvider();
+          break;
+        case 'github':
+          provider = new firebase.auth.GithubAuthProvider();
+          break;
+        case 'facebook':
+          provider = new firebase.auth.FacebookAuthProvider();
+          break;
+        case 'twitter':
+          provider = new firebase.auth.TwitterAuthProvider();
+          break;
+      }
+
       firebase
         .auth()
         .signInWithRedirect(provider)
