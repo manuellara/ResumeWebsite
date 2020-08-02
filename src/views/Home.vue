@@ -43,7 +43,12 @@
             <v-flex pa-2 xs12 sm12 md12>
               <GithubCal />
             </v-flex>
-            
+
+            <!-- blog -->
+            <v-flex pa-2 xs12 sm12 md12>
+              <Blog v-if="response == true" :data="data"/>
+            </v-flex>
+
           </v-flex>
 
 
@@ -60,15 +65,16 @@
 <script>
 import GithubCal from "../components/GithubCal";
 import Cards from "../components/Cards";
+import Blog from "../components/Blog";
 
-
-
+// API method
 import RssToJson from '@/services/RssToJson'
 
 export default {
   components: {
     GithubCal,
     Cards,
+    Blog,
   },
   data: () => ({
     username: "manuellaraa",

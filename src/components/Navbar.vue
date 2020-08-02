@@ -102,7 +102,6 @@ export default {
   color: grey;
   font-size: 20px;
 }
-
 .title {
   cursor: pointer;
 }

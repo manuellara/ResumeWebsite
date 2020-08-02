@@ -29,7 +29,7 @@
                         </v-btn>
                       </div>
                       <h4 class="text-center mlt-4">
-                        Log-In using Facebook, Google, Twitter, Github, or other credentials
+                        Log-In using Google, Twitter, Github, or other credentials
                       </h4>
                       <v-flex xs6 sm6 md6>
                         <v-form disabled>
@@ -144,27 +144,26 @@ export default {
       { id: 'Password', label: 'Password', name: 'Password', icon: 'mdi-form-textbox-password', type: 'password', color: 'black' },
     ],
     createAccount: [
-      { label: 'Name', name: 'Name', icon: 'mdi-account-circle-outline', type: 'password', color: 'black' },
-      { label: 'E-mail', name: 'E-mail', icon: 'mdi-email', type: 'text', color: 'black' },
-      { label: 'Password', name: 'Password', icon: 'mdi-form-textbox-password', type: 'password', color: 'black' },
+      { label: 'E-mail', id: "registerEmail", icon: 'mdi-email', type: 'text', color: 'black' },
+      { label: 'Password', id: "registerPassword", icon: 'mdi-form-textbox-password', type: 'password', color: 'black' },
     ],
     loginButtons:[
-      { icon: 'fab fa-facebook-f', provider: 'facebook' },
       { icon: 'fab fa-google', provider: 'google' },
       { icon: 'fab fa-twitter', provider: 'twitter' },
       { icon: 'fab fa-github', provider: 'github' },
     ],
   }),
+  watch: {
+    registerEmail(e){
+      console.log(e)
+    }
+  },
   props: {
     source: String
   },
   methods: {
     // Google sign-in dispatcher
     signIn(provider) {
-      if (provider == 'facebook' || provider == 'twitter' || provider == 'github') {
-        alert(provider + " login is not wired up yet. stay tuned...")
-        return
-      }
       this.$store.dispatch("signIn", provider);
     },
   }
