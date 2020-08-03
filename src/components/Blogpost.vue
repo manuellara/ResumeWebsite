@@ -26,7 +26,7 @@
             </v-btn>
           </template>
           <v-card>
-            <v-card-text v-html="item.content" />
+            <v-card-text class="pt-4" v-html="item.content" />
           </v-card>
         </v-dialog> 
 

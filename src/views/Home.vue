@@ -10,25 +10,13 @@
         <v-col align="center">
 
 
+          <Header />
+          
 
-          <!-- header -->
-          <v-card width="75%" elevation="8" class="pa-4 rounded-xl grey lighten-3">
-            <v-card-text>
-              <!-- profile picture -->
-              <v-flex xs12 sm11 md12>
-                <v-avatar v-for="(x, i) in avatarProperties" :key="i"  :class="x.class" :size="x.size">
-                  <v-img src="@/assets/profile.jpg" />
-                </v-avatar>
-              </v-flex>
+          <v-divider class="mt-6"/>
 
-              <!-- discription -->
-              <v-flex class="text-center black--text" pt-2 xsm12 sm12 md12>
-                <h1 class="display-1">Manuel Lara</h1>
-                <h4>IT Professional / Software Developer</h4>
-              </v-flex>
-            </v-card-text>
-          </v-card>
-
+          <!-- tabs -->
+          <Tabs class="py-5"/>
 
 
           <!-- flex row -->
@@ -64,8 +52,11 @@
 
 <script>
 import GithubCal from "../components/GithubCal";
+import Header from "../components/Header";
 import Cards from "../components/Cards";
 import Blog from "../components/Blog";
+import Tabs from "../components/Tabs";
+
 
 // API method
 import RssToJson from '@/services/RssToJson'
@@ -73,8 +64,10 @@ import RssToJson from '@/services/RssToJson'
 export default {
   components: {
     GithubCal,
+    Header,
     Cards,
     Blog,
+    Tabs,
   },
   data: () => ({
     username: "manuellaraa",
@@ -111,10 +104,6 @@ export default {
         ]
       },
     ],
-    avatarProperties: [
-      { size: 250, class: "profile hidden-sm-and-down" },
-      { size: 150, class: "profile hidden-md-and-up" },
-    ],
   }),
   mounted() {
 
@@ -132,12 +121,5 @@ export default {
 </script>
 
 <style scoped>
-.profile {
-    border: solid grey 1px;
-}
-#wrapper{
-  background-color: #EEEEEE;
-  width: 75%;
-  border-radius: 25px;
-}
+
 </style>

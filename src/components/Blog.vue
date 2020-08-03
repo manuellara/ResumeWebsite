@@ -16,6 +16,7 @@
           <Blogpost :item="item" />
         </v-flex>
     </v-card-text>
+
   </v-card>
 </template>
 
@@ -27,6 +28,9 @@ export default {
     Blogpost,
   },
   props: ["data"],
+  data: () => ({
+     //
+  })
 };
 </script>
 
