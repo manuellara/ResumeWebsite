@@ -1,4 +1,5 @@
 <template>
+<v-flex pa-4 xs12 sm4 md4  >
   <v-card elevation="8" class="rounded-xl" height="400px"> 
     <v-img
       class="white--text align-end"
@@ -39,6 +40,7 @@
     </v-card-text>
 
   </v-card>
+</v-flex>
 </template>
 <script>
 export default {

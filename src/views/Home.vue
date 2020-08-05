@@ -9,37 +9,91 @@
         <!-- column to center align everything -->
         <v-col align="center">
 
-
+          <!-- card, profile pic, and discription -->
           <Header />
           
 
           <v-divider class="mt-6"/>
 
           <!-- tabs -->
-          <Tabs class="py-5"/>
+          <v-tabs class="py-5" centered color="black" v-model="tabs">
+
+            <!-- 1st tab -->
+            <v-tab>
+              {{ 'Overview' }}
+            </v-tab>
+            <v-divider vertical inset/>
+
+            <!-- 2nd tab -->
+            <v-tab>
+              {{ 'About' }}
+            </v-tab>
+            <v-divider vertical inset/>
+
+            <!-- 3rd tab -->
+            <v-tab>
+              {{ 'Github' }}
+            </v-tab>
+            <v-divider vertical inset/>
+
+            <!-- 4th tab -->
+            <v-tab>
+              {{ 'Blog' }}
+            </v-tab>
+
+          </v-tabs>
 
 
-          <!-- flex row -->
-          <v-flex row pa-2 xs12 sm12 md12>
-
-            <!-- cards -->
-            <v-flex pa-4 xs12 sm4 md4  v-for="(item, i) in projectCards" :key="i">
-              <Cards :card="item" />
-            </v-flex>
-
-            <!-- github calendar -->
-            <v-flex pa-2 xs12 sm12 md12>
-              <GithubCal />
-            </v-flex>
-
-            <!-- blog -->
-            <v-flex pa-2 xs12 sm12 md12>
-              <Blog v-if="response == true" :data="data"/>
-            </v-flex>
-
-          </v-flex>
 
 
+          <v-tabs-items v-model="tabs">
+
+            <!-- 1st tab item -->
+            <v-tab-item >
+              <v-flex row xs12 sm12 md12>
+
+                <!-- cards -->
+                <Cards ref="cards" v-for="(item, i) in projectCards" :key="i"   :card="item" />
+
+                <!-- github calendar -->
+                <GithubCal />
+
+                <!-- blog -->
+                <Blog v-if="response == true" :data="data"/>
+
+              </v-flex>
+            </v-tab-item>
+
+            <!-- 2nd tab item -->
+            <v-tab-item >
+              <v-flex row xs12 sm12 md12>
+
+                <!-- cards -->
+                <Cards v-for="(item, i) in projectCards" :key="i"   :card="item" />
+
+              </v-flex>
+            </v-tab-item>
+
+            <!-- 3rd tab item -->
+            <v-tab-item >
+              <v-flex row xs12 sm12 md12>
+
+                <!-- github calendar -->
+                <GithubCal />
+
+              </v-flex>
+            </v-tab-item>
+
+            <!-- 4th tab item -->
+            <v-tab-item >
+              <v-flex row xs12 sm12 md12>
+                <!-- blog -->
+                <Blog v-if="response == true" :data="data"/>
+              </v-flex>
+              
+            </v-tab-item>
+
+          </v-tabs-items>
 
 
         </v-col>
@@ -55,7 +109,6 @@ import GithubCal from "../components/GithubCal";
 import Header from "../components/Header";
 import Cards from "../components/Cards";
 import Blog from "../components/Blog";
-import Tabs from "../components/Tabs";
 
 
 // API method
@@ -67,10 +120,10 @@ export default {
     Header,
     Cards,
     Blog,
-    Tabs,
   },
   data: () => ({
     username: "manuellaraa",
+    tabs: null,
     data: null,
     response: false,
     projectCards: [
@@ -111,8 +164,11 @@ export default {
     RssToJson.rsstojson({
       username: this.username
     }).then(result => {
+      // console log response
       console.log(result.data)
+      // update response => true
       this.response = true
+      // save result => data
       this.data = result.data
     });
 

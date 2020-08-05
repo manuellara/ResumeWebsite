@@ -1,4 +1,5 @@
 <template>
+<v-flex pa-2 xs12 sm12 md12>
   <v-card outlined>
 
     <!-- card title -->
@@ -18,6 +19,7 @@
     </v-card-text>
 
   </v-card>
+</v-flex>
 </template>
 
 <script>

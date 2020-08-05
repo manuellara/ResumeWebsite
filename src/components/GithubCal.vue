@@ -1,5 +1,7 @@
 <template>
+<v-flex pa-2 xs12 sm12 md12>
   <div class="calendar" />
+</v-flex>
 </template>
 <script>
 import GitHubCalendar from "github-calendar";
