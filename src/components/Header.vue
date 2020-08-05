@@ -3,6 +3,12 @@
 
     <!-- header -->
     <v-card elevation="8" class="mb-12 rounded-xl base">
+        <v-img 
+        height="100%"
+        class="rounded-xl"
+        gradient="to top, rgba(119, 119, 119, 0.5), rgba(255, 0, 0, 0), transparent"
+        src="" />
+
       <v-card-text>
         <!-- profile picture -->
         <v-flex xs12 sm11 md12>
@@ -49,12 +55,11 @@ export default {
 .base {
   position: relative;
   height: 400px;
-  background-image: url("https://images.hdqwalls.com/download/windows-xp-bliss-4k-lu-1920x1080.jpg");
-  background: linear-gradient(
+  /* background: linear-gradient(
     to top,
     rgba(119, 119, 119, 0.5),
     rgba(255, 0, 0, 0),
     transparent
-  );
+  ); */
 }
 </style>
