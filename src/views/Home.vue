@@ -32,12 +32,6 @@
 
             <!-- 3rd tab -->
             <v-tab>
-              {{ 'Github' }}
-            </v-tab>
-            <v-divider vertical inset/>
-
-            <!-- 4th tab -->
-            <v-tab>
               {{ 'Blog' }}
             </v-tab>
 
@@ -53,10 +47,10 @@
               <v-flex row xs12 sm12 md12>
 
                 <!-- cards -->
-                <Cards ref="cards" v-for="(item, i) in projectCards" :key="i"   :card="item" />
+                <Cards v-for="(item, i) in projectCards" :key="i"   :card="item" />
 
                 <!-- github calendar -->
-                <GithubCal />
+                <GithubCal :username="githubUser" />
 
                 <!-- blog -->
                 <Blog v-if="response == true" :data="data"/>
@@ -75,16 +69,6 @@
             </v-tab-item>
 
             <!-- 3rd tab item -->
-            <v-tab-item >
-              <v-flex row xs12 sm12 md12>
-
-                <!-- github calendar -->
-                <GithubCal />
-
-              </v-flex>
-            </v-tab-item>
-
-            <!-- 4th tab item -->
             <v-tab-item >
               <v-flex row xs12 sm12 md12>
                 <!-- blog -->
@@ -122,7 +106,8 @@ export default {
     Blog,
   },
   data: () => ({
-    username: "manuellaraa",
+    mediumUser: "manuellaraa",
+    githubUser: "manuellara",
     tabs: null,
     data: null,
     response: false,
@@ -162,7 +147,7 @@ export default {
 
     // API call
     RssToJson.rsstojson({
-      username: this.username
+      username: this.mediumUser
     }).then(result => {
       // console log response
       console.log(result.data)

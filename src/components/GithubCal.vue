@@ -7,12 +7,13 @@
 import GitHubCalendar from "github-calendar";
 import "github-calendar/dist/github-calendar-responsive.css";
 export default {
+  props:[ 'username' ],
   mounted() {
     var options = {
       responsive: true,
     }
 
-    GitHubCalendar(".calendar", "manuellara", options);
+    GitHubCalendar(".calendar", this.username, options);
   },
 };
 </script>
